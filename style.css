@@ -1,0 +1,25 @@
+.body{
+    align-self: center;
+    text-align: center;
+    margin-top: 15%;
+    height: 100%;
+    width: 100%;
+}
+.heading{
+    color: palevioletred;
+}
+button{
+    background-color: palevioletred;
+    border: none;
+    height: 30px;
+    width: 60px;
+    color: white;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+button:hover{
+    height: 40px;
+    width: 80px;
+    background-color: hotpink;
+}

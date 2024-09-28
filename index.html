@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Go Out with Me?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="body">
+
+        <div class="container">
+            <h2 class="heading" id="heading">Will You Go Out With Me?</h2>
+            <img id="imgId" src="https://media1.tenor.com/m/2KWVYsu-PR0AAAAC/oyennn-bunga.gif" style="height: 240px;"/> <br/>
+            <button type="submit" id="leftBtn" onmouseover="nFunction()">No</button> <button type="button" onclick="yFunction()" onmouseover="yOverfuncction()">Yes</button> 
+        </div>
+
+    </div>
+
+    <script>
+        var sideCounter = 0;
+
+        const nInverval =  setInterval(nFunction.n_changeImg, 4000);
+
+        function nFunction() {
+            const Sides = ['left', 'right'];
+            document.getElementById("leftBtn").style.float = Sides[sideCounter]; 
+            sideCounter = (sideCounter + 1) % Sides.length;
+            document.getElementById("imgId").src = "https://media1.tenor.com/m/_lD3-ws5NjkAAAAC/peach-peachcry.gif";
+
+            const NoimgUrls = ['https://media1.tenor.com/m/I3dzAXpujPQAAAAC/cry.gif', 'https://media1.tenor.com/m/_lD3-ws5NjkAAAAC/peach-peachcry.gif'];
+
+            var counterNo = 0;
+            
+            function n_changeImg()
+            {
+                
+                document.getElementById("imgId").src = NoimgUrls[counterNo];
+                counterNo = (counterNo + 1) % NoimgUrls.length;
+            }
+
+        }
+        function yFunction() {
+
+            document.getElementById("imgId").src = "https://media1.tenor.com/m/3HBTd5ylXPcAAAAC/peach-goma.gif";
+            document.getElementById("heading").innerHTML = " Good!! You `made the right Choice Lol!";
+            document.getElementById("leftBtn").style.display="none";
+
+            const imgUrls = ['https://media1.tenor.com/m/3pXNYZVUIZkAAAAC/peach-and-goma.gif', 'https://media1.tenor.com/m/3HBTd5ylXPcAAAAC/peach-goma.gif'];
+
+            var counter = 0;
+            
+            function changeImg()
+            {
+                
+                document.getElementById("imgId").src = imgUrls[counter];
+                counter = (counter + 1) % imgUrls.length;
+            }
+
+        setInterval(changeImg, 5000);
+
+        }
+
+        function yOverfuncction() {
+
+            document.getElementById("imgId").src = "https://media1.tenor.com/m/2KWVYsu-PR0AAAAC/oyennn-bunga.gif";
+            document.getElementById("leftBtn").style.float = "none"; 
+            clearInterval(nInverval); 
+        }
+
+    </script>
+</body>
+</html>
